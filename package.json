@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:/Build-Week-DevDesk-Queue2/backend.git",
+  "author": "Germaine Pannell <me@germainep.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "cross-env NODE_ENV=testing jest --watch",
+    "start": "node index.js",
+    "dev:start": "cross-env NODE_ENV=development nodemon index.js"
+  }
+}
