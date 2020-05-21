@@ -1,6 +1,7 @@
-exports.up = function (knex) {
-  // TODO: Create Table For Users
-  // TODO: Create Table For Queue
+exports.up = function ( knex ) {
+
 }
 
-exports.down = function (knex) {}
+exports.down = function ( knex ) {
+
+}
