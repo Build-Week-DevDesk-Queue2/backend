@@ -12,11 +12,11 @@ exports.up = function ( knex ) {
                tbl.string('issue_type').notNullable()
                tbl.text('have_tried')
                tbl.text('info').notNullable()
-               tbl.integer('created_by').unsigned().references('id').inTable('users')
-               tbl.date('created_on').defaultTo(Date.now())
-               tbl.boolean('assigned').defaultTo(false)
+               tbl.integer('created_by').references('id').inTable('users').notNullable()
+               tbl.dateTime('created_on', { precision: 6 }).defaultTo(knex.fn.now())
+               tbl.boolean('assigned').defaultTo(false).notNullable()
                tbl.integer('assigned_to').unsigned().references('id').inTable('users')
-               tbl.boolean('completed').defaultTo(false)
+               tbl.boolean('completed').defaultTo(false).notNullable()
              })
 }
 
