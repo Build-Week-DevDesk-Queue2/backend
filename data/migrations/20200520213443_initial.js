@@ -3,7 +3,7 @@ exports.up = function ( knex ) {
              .createTable('users', ( tbl ) => {
                tbl.increments()
                tbl.string('username', 16).unique().notNullable()
-               tbl.string('password', 16).notNullable()
+               tbl.string('password', 256).notNullable()
                tbl.string('role').notNullable()
              })
              .createTable('queue', ( tbl ) => {
