@@ -9,19 +9,19 @@ exports.seed = function ( knex ) {
                                         id: 1,
                                         username: 'Germaine',
                                         password: 'testpass',
-                                        role: 'helper'
+                                        role: 'helper',
                                       },
                                       {
                                         id: 2,
                                         username: 'Jimbo',
                                         password: 'testpass2',
-                                        role: 'student'
+                                        role: 'student',
                                       },
                                       {
                                         id: 3,
                                         username: 'Kelly',
                                         password: 'testpass3',
-                                        role: 'student'
+                                        role: 'student',
                                       },
                                     ])
       })
