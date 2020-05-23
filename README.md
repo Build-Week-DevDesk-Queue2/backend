@@ -2,4 +2,16 @@
 DevDesk Queue - Backend
 
 # Authenication
-login 
+
+## Login
+'/api/users/login'
+
+once logged in the api returns a user object and a token
+
+
+## Registration
+'/api/users/register'
+
+returns a user object for the newly created user and message stating a new user was created
+
+
