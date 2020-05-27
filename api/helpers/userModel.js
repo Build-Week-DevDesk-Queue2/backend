@@ -1,11 +1,11 @@
 const db = require('../../data/config')
 
 function findUserBy ( filter ) {
-  return db('users').where(filter).first()
+  return db('users').where(filter).select('id', 'role', 'username')
 }
 
-async function add ( user ) {
-  const [ id ] = await db('users').insert(user).returning([ 'id', 'username', 'role' ])
+function add ( user ) {
+  const [ id ] = db('users').insert(user).returning([ 'id', 'username', 'role' ])
 
   if (typeof id !== 'object') {
     return findUserBy({ id: id })

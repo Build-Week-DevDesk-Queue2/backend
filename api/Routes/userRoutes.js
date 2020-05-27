@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs')
 
 const Users = require('../helpers/userModel')
 const tokenGen = require('../helpers/tokenGen')
+const authenticator = require('../middleware/authenticator')
 
 const router = express.Router()
 
@@ -29,6 +30,17 @@ router.post('/register', async ( req, res, next ) => {
   const newUser = await Users.add(req.body)
   try {
     res.status(201).json({ message: 'new user created', newUser })
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.get('/:id', authenticator, async ( req, res, next ) => {
+  const { id } = req.params
+  const user = await Users.findUserBy({ id })
+
+  try {
+    res.json(user)
   } catch (err) {
     next(err)
   }
